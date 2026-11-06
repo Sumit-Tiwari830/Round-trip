@@ -1,0 +1,23 @@
+server:
+  port: 8080
+  shutdown: graceful
+
+spring:
+  application:
+    name: roundtrip-backend
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/roundtrip}
+      database: roundtrip
+      auto-index-creation: false
+
+clerk:
+  # In production, set CLERK_JWKS_URL=https://<your-clerk-domain>/.well-known/jwks.json
+  jwks-url: ${CLERK_JWKS_URL:}
+  issuer: ${CLERK_ISSUER:}
+
+logging:
+  level:
+    root: INFO
+    com.roundtrip: INFO
+    org.springframework.web.socket: INFO

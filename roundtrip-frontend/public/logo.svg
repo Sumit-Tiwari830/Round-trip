@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Background Radial Gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.25"/>
+      <stop offset="50%" stop-color="#064e3b" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#02140e" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Metallic Gold Ring Gradient -->
+    <linearGradient id="goldRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="30%" stop-color="#f59e0b"/>
+      <stop offset="60%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+
+    <!-- Neon Cyan Gradient -->
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#67e8f9"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+
+    <!-- Ruby Crimson Gradient -->
+    <linearGradient id="rubyGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f87171"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+
+    <!-- Emerald Glow Gradient -->
+    <linearGradient id="emeraldGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6ee7b7"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+
+    <!-- Shield Face Gradient -->
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0b1320"/>
+    </linearGradient>
+
+    <!-- Neon Drop Shadow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="goldGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Ambient Glow -->
+  <circle cx="250" cy="250" r="230" fill="url(#bgGlow)"/>
+
+  <!-- Outer Orbit Loop (RoundTrip Dynamic Ring) -->
+  <circle cx="250" cy="250" r="200" fill="none" stroke="url(#goldRing)" stroke-width="6" stroke-dasharray="14 8" opacity="0.85" filter="url(#goldGlow)"/>
+  <circle cx="250" cy="250" r="175" fill="none" stroke="#10b981" stroke-width="2" stroke-opacity="0.4"/>
+
+  <!-- Orbital Arrow Tracks (Signifying Round Trip) -->
+  <path d="M 120 180 A 180 180 0 0 1 380 180" fill="none" stroke="url(#goldRing)" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="385,175 395,190 375,192" fill="#fbbf24"/>
+
+  <path d="M 380 320 A 180 180 0 0 1 120 320" fill="none" stroke="url(#goldRing)" stroke-width="4" stroke-linecap="round"/>
+  <polygon points="115,325 105,310 125,308" fill="#fbbf24"/>
+
+  <!-- 4 Cardinal Suit Crests (4 Players) -->
+  <!-- Top: North / Spade ♠ -->
+  <g transform="translate(250, 60)" filter="url(#glow)">
+    <circle cx="0" cy="0" r="28" fill="#0f172a" stroke="#22d3ee" stroke-width="3"/>
+    <path d="M 0 -14 C -6 -2 -14 6 -8 11 C -4 14 0 12 0 12 C 0 12 4 14 8 11 C 14 6 6 -2 0 -14 Z M -2 12 L -5 18 L 5 18 L 2 12 Z" fill="url(#cyanGlow)"/>
+  </g>
+
+  <!-- Right: East / Heart ♥ -->
+  <g transform="translate(435, 250)" filter="url(#glow)">
+    <circle cx="0" cy="0" r="28" fill="#0f172a" stroke="#ef4444" stroke-width="3"/>
+    <path d="M 0 14 C -12 6 -14 -4 -7 -10 C -2 -14 0 -8 0 -8 C 0 -8 2 -14 7 -10 C 14 -4 12 6 0 14 Z" fill="url(#rubyGlow)"/>
+  </g>
+
+  <!-- Bottom: South / Club ♣ -->
+  <g transform="translate(250, 440)" filter="url(#glow)">
+    <circle cx="0" cy="0" r="28" fill="#0f172a" stroke="#10b981" stroke-width="3"/>
+    <circle cx="0" cy="-6" r="6" fill="url(#emeraldGlow)"/>
+    <circle cx="-6" cy="4" r="6" fill="url(#emeraldGlow)"/>
+    <circle cx="6" cy="4" r="6" fill="url(#emeraldGlow)"/>
+    <polygon points="-2,4 -5,14 5,14 2,4" fill="url(#emeraldGlow)"/>
+  </g>
+
+  <!-- Left: West / Diamond ♦ -->
+  <g transform="translate(65, 250)" filter="url(#glow)">
+    <circle cx="0" cy="0" r="28" fill="#0f172a" stroke="#f59e0b" stroke-width="3"/>
+    <polygon points="0,-14 12,0 0,14 -12,0" fill="url(#goldRing)"/>
+  </g>
+
+  <!-- Central Crest: Cyberpunk Ace Shield -->
+  <g transform="translate(250, 250)">
+    <!-- Outer Shield Shadow -->
+    <path d="M -75 -90 L 75 -90 L 90 20 C 85 90 0 125 0 125 C 0 125 -85 90 -90 20 Z" fill="url(#shieldGrad)" stroke="url(#goldRing)" stroke-width="5" filter="url(#goldGlow)"/>
+    
+    <!-- Inner Felt Accent -->
+    <path d="M -60 -75 L 60 -75 L 72 15 C 68 70 0 100 0 100 C 0 100 -68 70 -72 15 Z" fill="#0d281e" stroke="#10b981" stroke-width="1.5" opacity="0.8"/>
+
+    <!-- Master Spade Symbol -->
+    <g transform="translate(0, -10) scale(1.6)" filter="url(#glow)">
+      <!-- Giant Spade -->
+      <path d="M 0 -24 C -10 -4 -24 8 -14 18 C -7 23 0 20 0 20 C 0 20 7 23 14 18 C 24 8 10 -4 0 -24 Z" fill="url(#goldRing)"/>
+      <path d="M -3 18 L -9 30 L 9 30 L 3 18 Z" fill="url(#goldRing)"/>
+      <!-- Inner Spade Highlight -->
+      <path d="M 0 -16 C -6 -2 -14 6 -9 12 C -5 15 0 14 0 14 C 0 14 5 15 9 12 C 14 6 6 -2 0 -16 Z" fill="#071611"/>
+    </g>
+
+    <!-- Golden 'RT' Monogram in the Heart of the Spade -->
+    <text x="0" y="0" font-family="'Outfit', 'Arial Black', sans-serif" font-size="22" font-weight="900" fill="#fbbf24" text-anchor="middle" dominant-baseline="middle" letter-spacing="1">RT</text>
+
+    <!-- 5 Stars representing 5 Rounds -->
+    <g transform="translate(-40, 70) scale(0.6)" fill="#fbbf24">
+      <polygon points="0,-8 2,-2 8,-2 3,2 5,8 0,4 -5,8 -3,2 -8,-2 -2,-2"/>
+    </g>
+    <g transform="translate(-20, 78) scale(0.6)" fill="#fbbf24">
+      <polygon points="0,-8 2,-2 8,-2 3,2 5,8 0,4 -5,8 -3,2 -8,-2 -2,-2"/>
+    </g>
+    <g transform="translate(0, 82) scale(0.7)" fill="#34d399">
+      <polygon points="0,-8 2,-2 8,-2 3,2 5,8 0,4 -5,8 -3,2 -8,-2 -2,-2"/>
+    </g>
+    <g transform="translate(20, 78) scale(0.6)" fill="#fbbf24">
+      <polygon points="0,-8 2,-2 8,-2 3,2 5,8 0,4 -5,8 -3,2 -8,-2 -2,-2"/>
+    </g>
+    <g transform="translate(40, 70) scale(0.6)" fill="#fbbf24">
+      <polygon points="0,-8 2,-2 8,-2 3,2 5,8 0,4 -5,8 -3,2 -8,-2 -2,-2"/>
+    </g>
+  </g>
+</svg>
